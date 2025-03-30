@@ -1,6 +1,6 @@
 # Revisão prova m5
 
-Faça um sistema Web capaz de cadastrar, deletar, atualizar e consultar caminhos que o robô Dobot realizou.
+Faça um sistema Web capaz de cadastrar, deletar, atualizar e consultar caminhos que o robô Dobot realizou em Flask.
 
 ## Rotas necessárias:
 
