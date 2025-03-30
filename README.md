@@ -5,8 +5,11 @@ Faça um sistema Web capaz de cadastrar, deletar, atualizar e consultar caminhos
 ## Rotas necessárias:
 
 /cadastrar_caminho: Rota para cadastrar o caminho feito pelo robô.
+
 /consultar_caminho: Consultar um caminho cadastrado pelo ID.
+
 /atualizar_caminho: Atualizar um caminho pelo ID.
+
 /deletar_caminho: Deletar um caminho pelo ID.
 
 ### Requisitos
