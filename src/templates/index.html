@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciador de Caminhos</title>
+    <script src="https://unpkg.com/htmx.org@1.9.2"></script>
+    <script src="https://unpkg.com/htmx.org/dist/ext/json-enc.js"></script>
+</head>
+<body>
+    <h1>Gerenciador de Caminhos</h1>
+
+    <!-- Formulário de Cadastro -->
+    <h2>Cadastrar Caminho</h2>
+    <form 
+        hx-post="/cadastrar_caminho" 
+        hx-ext="json-enc" 
+        hx-trigger="submit"
+        hx-target="#feedback" 
+        hx-swap="innerHTML"
+    >
+        <label>X: <input type="number" name="x" required></label><br>
+        <label>Y: <input type="number" name="y" required></label><br>
+        <label>Z: <input type="number" name="z" required></label><br>
+        <button type="submit">Cadastrar</button>
+    </form>
+
+    <div id="feedback"></div>
+
+    <!-- Formulário de Consulta -->
+    <h2>Consultar Caminho</h2>
+    <input type="number" id="consulta_id" placeholder="ID do Caminho">
+    <button 
+        hx-get="/consultar_caminho/"
+        hx-trigger="click" 
+        hx-target="#resultado"
+        hx-vals='js:{ caminho_id: document.getElementById("consulta_id").value }'
+    >
+        Consultar
+    </button>
+    
+    <div id="resultado"></div>
+
+    <!-- Formulário de Exclusão -->
+    <h2>Deletar Caminho</h2>
+    <input type="number" id="delete_id" placeholder="ID do Caminho">
+    <button 
+        hx-delete="/deletar_caminho/"
+        hx-trigger="click" 
+        hx-target="#feedback"
+        hx-vals='js:{ caminho_id: document.getElementById("delete_id").value }'
+    >
+        Deletar
+    </button>
+</body>
+</html>
