@@ -31,7 +31,7 @@
     <h2>Consultar Caminho</h2>
     <input type="number" id="consulta_id" placeholder="ID do Caminho">
     <button 
-        hx-get="/consultar_caminho/"
+        hx-get="/consultar_caminho"
         hx-trigger="click" 
         hx-target="#resultado"
         hx-vals='js:{ caminho_id: document.getElementById("consulta_id").value }'
@@ -41,14 +41,32 @@
     
     <div id="resultado"></div>
 
+    <!-- Formulário de Atualização -->
+    <h2>Atualizar Caminho</h2>
+    <form 
+        hx-put="" 
+        hx-ext="json-enc" 
+        hx-trigger="submit"
+        hx-target="#feedback" 
+        hx-swap="innerHTML"
+        onsubmit="this.setAttribute('hx-put', '/atualizar_caminho/' + document.getElementById('update_id').value)"
+    >
+        <label>ID: <input type="number" id="update_id" required></label><br>
+        <label>New X: <input type="number" name="x" required></label><br>
+        <label>New Y: <input type="number" name="y" required></label><br>
+        <label>New Z: <input type="number" name="z" required></label><br>
+        <button type="submit">Atualizar</button>
+    </form>
+
     <!-- Formulário de Exclusão -->
     <h2>Deletar Caminho</h2>
     <input type="number" id="delete_id" placeholder="ID do Caminho">
     <button 
-        hx-delete="/deletar_caminho/"
-        hx-trigger="click" 
+        hx-delete=""
+        hx-trigger="click"
         hx-target="#feedback"
-        hx-vals='js:{ caminho_id: document.getElementById("delete_id").value }'
+        hx-confirm="Tem certeza que deseja deletar?"
+        onclick="this.setAttribute('hx-delete', '/deletar_caminho/' + document.getElementById('delete_id').value)"
     >
         Deletar
     </button>
