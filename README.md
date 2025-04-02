@@ -16,7 +16,6 @@ Faça um sistema Web capaz de cadastrar, deletar, atualizar e consultar caminhos
 
 - Realizar o desenvolvimento em um ambiente virtual.
 - Ter as dependências em um `requirements.txt`
-- Usar TinyDB
 - Fazer um frontend basico (utilizando HTMX)
 - Ter um .gitignore
 - Possuir instruções de execução
